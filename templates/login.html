@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>NFBCorp :: Внутренний Портал</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="container login-wrapper">
+        <div class="login-card">
+            <h1 class="system-title">NFBCorp. Video System</h1>
+            <div class="system-status">СТАТУС: ОНЛАЙН</div>
+            
+            <p class="login-prompt">
+                ВНУТРЕННИЙ ПОРТАЛ СОТРУДНИКОВ<br>
+                Доступ только по токенам высшего порядка.
+            </p>
+            
+            <form method="POST">
+                <div class="input-group">
+                    <span class="input-label">ID:</span>
+                    <input type="text" name="username" placeholder="Идентификатор сотрудника" required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <span class="input-label">KEY:</span>
+                    <input type="password" name="password" placeholder="Пароль сессии" required>
+                </div>
+                
+                <button type="submit" class="btn-login">:: ИНИЦИАЛИЗАЦИЯ СЕССИИ ::</button>
+            </form>
+            <div class="login-footer">Unauthorized access will be hexed.</div>
+        </div>
+    </div>
+</body>
+</html>

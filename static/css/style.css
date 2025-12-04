@@ -1,0 +1,164 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Cinzel:wght@700&display=swap');
+
+:root {
+    --bg-color: #050505;
+    --panel-bg: #0a0a0c;
+    --text-main: #b8b8b8;
+    --text-dim: #555;
+    --accent: #d4af37;     
+    --accent-dim: rgba(212, 175, 55, 0.2);
+    --alert: #ff3e3e;
+    --border: #333;
+    --font-mono: 'Share Tech Mono', monospace;
+    --font-header: 'Cinzel', serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.scanlines {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1));
+    background-size: 100% 4px;
+    pointer-events: none; z-index: 999;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.2s; }
+
+.login-wrapper {
+    height: 100vh; display: flex; align-items: center; justify-content: center;
+}
+.login-card {
+    width: 400px; padding: 40px;
+    border: 1px solid var(--accent);
+    background: var(--panel-bg);
+    box-shadow: 0 0 30px var(--accent-dim);
+    text-align: center;
+}
+.system-title {
+    font-family: var(--font-header); color: var(--accent); margin: 0; font-size: 2rem;
+}
+.system-status {
+    font-size: 0.7rem; color: var(--text-dim); border-bottom: 1px solid var(--border);
+    padding-bottom: 15px; margin-bottom: 20px;
+}
+.login-prompt { font-size: 0.9rem; margin-bottom: 30px; color: var(--text-main); }
+
+.input-group {
+    display: flex; align-items: center; margin-bottom: 15px;
+    border: 1px solid var(--border); background: #000;
+}
+.input-label {
+    padding: 10px; background: var(--border); color: #fff; font-size: 0.8rem; width: 40px;
+}
+input {
+    width: 100%; border: none; background: transparent; color: var(--accent);
+    padding: 10px; font-family: var(--font-mono); outline: none;
+}
+.btn-login {
+    width: 100%; padding: 12px; margin-top: 10px;
+    background: var(--accent); color: #000; border: none;
+    font-family: var(--font-mono); font-weight: bold; cursor: pointer;
+}
+.btn-login:hover { background: #fff; }
+.login-footer { margin-top: 20px; font-size: 0.7rem; color: var(--alert); }
+
+.top-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 30px; background: #080808; border-bottom: 1px solid var(--border);
+}
+.logo-area { font-family: var(--font-header); color: var(--accent); font-size: 1.2rem; }
+.logo-icon { font-size: 1.5rem; margin-right: 10px; vertical-align: middle; }
+.user-info { display: flex; align-items: center; gap: 20px; font-size: 0.9rem; }
+.sys-time { color: var(--text-dim); }
+.role-tag {
+    border: 1px solid var(--accent); padding: 2px 8px; color: var(--accent); font-size: 0.8rem;
+}
+.btn-core {
+    color: var(--alert); border: 1px solid var(--alert); padding: 5px 15px;
+}
+.btn-core:hover { background: var(--alert); color: #000; box-shadow: 0 0 15px var(--alert); }
+
+.dashboard-layout { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+
+.system-alert {
+    background: rgba(255, 62, 62, 0.1); border-left: 3px solid var(--alert);
+    padding: 15px; margin-bottom: 20px; color: var(--text-main);
+}
+
+.info-panel {
+    border: 1px solid var(--border); background: var(--panel-bg); margin-bottom: 40px;
+}
+.panel-header {
+    background: var(--border); color: #fff; padding: 5px 15px; font-size: 0.8rem;
+}
+.panel-body { padding: 15px; font-size: 0.9rem; }
+.log-line { margin-bottom: 5px; }
+.highlight { color: var(--accent); }
+
+.grid-label { margin-bottom: 15px; border-bottom: 1px dashed var(--border); padding-bottom: 5px; }
+
+.content-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;
+}
+.monitor-card {
+    border: 1px solid var(--border); background: #000;
+}
+.monitor-header {
+    display: flex; justify-content: space-between; padding: 8px; font-size: 0.8rem;
+    background: #111; border-bottom: 1px solid #222;
+}
+.rec-dot { color: var(--alert); animation: blink 2s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.gif-wrapper {
+    height: 180px; overflow: hidden; filter: grayscale(100%) contrast(1.2) brightness(0.6);
+    border-bottom: 1px solid #222;
+}
+.gif-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+.monitor-card:hover { border-color: var(--accent); }
+.monitor-card:hover .gif-wrapper { filter: none; }
+.monitor-footer { padding: 5px 10px; font-size: 0.7rem; color: var(--text-dim); text-align: right; }
+
+.upload-zone {
+    margin-top: 60px; border: 1px dashed var(--border); padding: 30px; text-align: center;
+    background: rgba(10, 10, 12, 0.5);
+}
+.upload-header { font-size: 1.1rem; color: var(--accent); margin-bottom: 10px; }
+.upload-hint { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 20px; }
+input[type="file"] { display: none; }
+.terminal-btn {
+    display: inline-block; border: 1px solid var(--text-main); padding: 10px 20px;
+    cursor: pointer; margin: 0 10px; background: #000; transition: 0.2s;
+}
+.terminal-btn:hover { background: var(--text-main); color: #000; }
+.terminal-btn.action { border-color: var(--accent); color: var(--accent); }
+.terminal-btn.action:hover { background: var(--accent); color: #000; }
+
+.admin-wrapper { text-align: center; margin-top: 10vh; }
+.core-title { font-family: var(--font-header); color: #fff; font-size: 2.5rem; margin-bottom: 10px; }
+.auth-level { color: var(--accent); border: 1px solid var(--accent); display: inline-block; padding: 5px 15px; margin-bottom: 40px; }
+
+.core-video-frame {
+    max-width: 800px; margin: 0 auto 40px auto; border: 2px solid var(--border);
+    position: relative; background: #000;
+}
+.video-overlay {
+    position: absolute; top: 10px; left: 10px; font-size: 0.7rem; color: var(--alert);
+    background: rgba(0,0,0,0.7); padding: 2px 5px; z-index: 10;
+}
+.core-video { width: 100%; display: block; opacity: 0.8; }
+
+.flag-terminal {
+    background: #111; border: 1px solid var(--accent); padding: 20px;
+    display: inline-block; min-width: 300px;
+}
+.flag-label { font-size: 0.8rem; color: var(--text-dim); margin-bottom: 10px; text-align: left; }
+.flag-value { font-size: 1.2rem; color: var(--accent); font-weight: bold; letter-spacing: 2px; }

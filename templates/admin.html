@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>NFBCorp :: ЯДРО</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="container admin-wrapper">
+        
+        <h1 class="core-title">ДОСТУП К ЯДРУ РАЗРЕШЕН</h1>
+        <div class="auth-level">УРОВЕНЬ ДОСТУПА: АДМИНИСТРАТОР</div>
+        
+        <p class="admin-msg">
+            Добро пожаловать. Протокол "Черное Солнце" активирован.<br>
+            Внимание: Ведется запись сеанса.
+        </p>
+        
+        <div class="core-video-frame">
+            <div class="video-overlay">SECURE CHANNEL // ENCRYPTED</div>
+            <video autoplay muted loop playsinline class="core-video">
+                <source src="{{ url_for('static', filename='videos/admin_panel.mp4') }}" type="video/mp4">
+            </video>
+        </div>
+                <div class="flag-terminal">
+            <div class="flag-label">>> SYSTEM_SECRET_KEY:</div>
+            <div class="flag-value">{{ flag }}</div>
+        </div>
+
+    </div>
+</body>
+</html>
